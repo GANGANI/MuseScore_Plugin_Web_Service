@@ -82,11 +82,6 @@ include "query.php";
 											<td>' . $row['version'] . '</td>
 											<td>' . $row['author'] . '</td>
 											<td><form action="' . $row['plugin'] . '">
-											    <?php
-											    $title = '.$row['Title'].';
-                                                $sql = "insert into downloaded_plugins(Title) VALUE $title";
-                                                $conn->query($sql);
-                                                ?>
 												<button name="update" type="submit" value='.$row['Title'].'>Update</button>
 											</form>
 											</td>
