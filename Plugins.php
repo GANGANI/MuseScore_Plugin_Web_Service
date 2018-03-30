@@ -28,13 +28,13 @@ include "query.php";
         </header>
         <div class="row 200%">
             <div class="6u 12u$(medium)">
-                <form method="post" action="#">
+                <form method="post" action="Search_PHP.php">
                     <div class="row uniform">
                         <div class="9u 12u$(small)">
-                            <input type="text" name="query" id="query" value="" placeholder="Search" />
+                            <input type="text" name="search_result" id="query" value="" placeholder="Search" />
                         </div>
                         <div class="3u$ 12u$(small)">
-                            <input type="submit" value="Search" class="small" />
+                            <input type="submit" name="search" value="Search" class="small" />
                         </div>
                     </div>
                 </form>
@@ -77,7 +77,7 @@ include "query.php";
 											<td>' . $row['author'] . '</td>
 											<td><a href="' . $row['plugin'] . '">' . $row['Title'] . '</a></td>
 											<td><form method="post" action="update_plugin.php">
-											    <button name="update" type="submit" value='.$row['Title'].'>Update</button>
+											    <button name="update" type="submit" value="' .$row['Title'].'">Update</button>
 											</form>
 											</td>
 											</tr>';

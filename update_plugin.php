@@ -42,7 +42,7 @@ $row = $result->fetch_assoc();
 
         <div class="row 200%">
             <div class="12u 12u$(medium)">
-                <form method="post" action="Updated_plugins_details.php">
+                <form method="POST" action="Updated_plugins_details.php">
                     <div class="row uniform">
 
                         <div class="6u 12u$(xsmall)">
@@ -77,8 +77,6 @@ $row = $result->fetch_assoc();
 
                     </div>
                 </form>
-
-                <hr />
 
 
 

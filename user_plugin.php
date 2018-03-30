@@ -1,6 +1,7 @@
 <?php
 include "query.php";
 
+
 ?>
 <html>
 <head>
@@ -15,9 +16,12 @@ include "query.php";
 <header id="header">
     <div class="inner">
         <a href="index.html" class="logo">MuseScore</a>
-        <a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+    </div>
+    <div>
+        <a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars">Menu</span></a>
     </div>
 </header>
+
 
 <!-- Main -->
 <section id="main" class="wrapper">
@@ -28,13 +32,13 @@ include "query.php";
         </header>
         <div class="row 200%">
             <div class="6u 12u$(medium)">
-                <form method="post" action="#">
+                <form method="post" action="Search_PHP.php">
                     <div class="row uniform">
                         <div class="9u 12u$(small)">
-                            <input type="text" name="query" id="query" value="" placeholder="Search" />
+                            <input type="text" name="search_result" id="query" value="" placeholder="Search" />
                         </div>
                         <div class="3u$ 12u$(small)">
-                            <input type="submit" value="Search" class="small" />
+                            <input type="submit" name= "search" value="search" class="small" />
                         </div>
                     </div>
                 </form>
@@ -43,7 +47,7 @@ include "query.php";
 
         <div class="row 200%">
             <div class="3u 12u$(small)">
-                <form action="updated_plugins.php" method="POST">
+                <form action="Downloaded_plugins.php.php" method="POST">
                     <input type="submit" value="Downloaded Plugins" class="special" />
                     <p></p>
                 </form>
@@ -81,8 +85,8 @@ include "query.php";
 											<td>' . $row['category'] . '</td>
 											<td>' . $row['version'] . '</td>
 											<td>' . $row['author'] . '</td>
-											<td><form action="' . $row['plugin'] . '">
-												<button name="update" type="submit" value='.$row['Title'].'>Update</button>
+											<td><form action="download.php" method="POST"> 
+												<button type="submit" name ="plugin" value ="' . $row['Title'] .'" >Download</button>
 											</form>
 											</td>
 											</tr>';

@@ -105,7 +105,7 @@ $conn = mysqli_connect($sereverName,$userName,$passWord,$dbName);
 											<td>' . $row['author'] . '</td>
 											<td><a href="' . $row['plugin'] . '">' . $row['Title'] . '</a></td>
 											<td><form method="post" action="update_plugin.php">
-											    <button name="update" type="submit" value="'.$row['Title'].'">Update</button>
+											    <button name="update" type="submit" value="' .$row['Title'].'">Update</button>
 											</form>
 											</td>
 											</tr>';

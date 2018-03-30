@@ -56,7 +56,6 @@ $conn = mysqli_connect($sereverName,$userName,$passWord,$dbName);
                             <th>Category</th>
                             <th>API Compatibility</th>
                             <th>Author</th>
-                            <th>Plugin</th>
                             <th>Update</th>
                         </tr>
                         </thead>
@@ -66,12 +65,12 @@ $conn = mysqli_connect($sereverName,$userName,$passWord,$dbName);
                         $result = $conn->query($sql);
                         while ($row = $result->fetch_assoc()) {
                             echo '<tr>
-											<td>' . $row['title'] . '</td>
+											<td>' . $row['Title'] . '</td>
 											<td>' . $row['category'] . '</td>
 											<td>' . $row['version'] . '</td>
 											<td>' . $row['author'] . '</td>
-											<td><form method="post" action="update_plugin.php">
-												<input type="submit" value="Update Plugin" class="small" />
+											<td><form action="download.php" method="POST"> 
+												<button type="submit" name ="plugin" value ="' . $row['Title'] .'" >Update</button>
 											</form>
 											</td>
 											</tr>';

@@ -11,6 +11,8 @@ if (isset($_POST['username']) and isset($_POST['password'])){
     $password = $_POST['password'];
 
     $query = "SELECT username FROM m_user  WHERE username = '$username' and password = '$password'";
+    session_start();
+    $_SESSION['username'] = $username;
     $result = mysqli_query($conn,$query) or die (mysqli_error($conn));
     $count = mysqli_num_rows($result);
     if($count==1){

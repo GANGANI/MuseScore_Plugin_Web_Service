@@ -5,8 +5,8 @@ $passWord = '';
 $dbName = 'pluginmanager';
 $conn = mysqli_connect($sereverName,$userName,$passWord,$dbName);
 
-if (($_POST['title'])!="" and ($_POST['API_Compatibility'])!="" and ($_POST['category'])!="" and ($_POST['author'])!="" and ($_POST['plugin'])!="") {
-    $title = $_POST['title'];
+if (($_POST['API_Compatibility'])!="" and ($_POST['author'])!="" and ($_POST['plugin'])!="") {
+    $title = $_POST['Title'];
     $apiCompatibility = $_POST['API_Compatibility'];
     $category = $_POST['category'];
     $author = $_POST['author'];
@@ -14,11 +14,13 @@ if (($_POST['title'])!="" and ($_POST['API_Compatibility'])!="" and ($_POST['cat
     //session_start();
     //$_SESSION['plugin'] = $title;
 
-    $query = "update plugin_details set author=$author, plugin=$plugin, Version=$apiCompatibility where title=$title ";
-    $conn->query($query);
+    $query = "update plugin_details set author='$author', plugin='$plugin', Version='$apiCompatibility' where Title='$title' ";
+    $conn->query($query) or die($conn->error);
 
-    $query2 = "insert into updated_plugins(plugin_id) values (select plugin_id from plugin_details where Title=$title)";
+
+    $query2 = "insert into updated_plugin(Title) values ('$title')";
+    $conn->query($query2) or die($conn->error);
+
     include "Plugins.php";
 }
-
 ?>

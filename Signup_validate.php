@@ -12,9 +12,10 @@ if (($_POST['username'])!="" and ($_POST['password'])!="" and ($_POST['email'])!
     $email = $_POST['email'];
     $user_type = $_POST['user_type'];
 
+    //$nameValidation ="SELECT * FROM ";
     $query = "INSERT INTO m_user(username,password,email,user_role_type) VALUES ('$username','$password','$email','$user_type')";
     $conn->query($query);
-    include "Login.php";
+    include "../login/Login.php";
 }
 else{
     include "SignUp.php";

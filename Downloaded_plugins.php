@@ -1,7 +1,13 @@
 <?php
 include "query.php";
 
+$sereverName ='127.0.0.1';
+$userName = 'root';
+$passWord = '';
+$dbName = 'pluginmanager';
+$conn = mysqli_connect($sereverName,$userName,$passWord,$dbName);
 ?>
+
 <html>
 <head>
     <title>MuseScore - Plugins</title>
@@ -66,8 +72,11 @@ include "query.php";
                         </thead>
                         <tbody>
                         <?php
-                        $tab=new query();
-                        $result=$tab->simple_select(['Title','category','version','plugin','author'],'plugin_details');
+                        session_start();
+                        $user = $_SESSION['username'];
+                        $sql1 = "SELECT Title,category,version,author FROM plugin_details natural join downloadedPlugins where username='$user'";
+                        $result = $conn->query($sql1);
+
                         while ($row = $result->fetch_assoc()) {
                             echo '<tr>
 											<td>' . $row['Title'] . '</td>
