@@ -1,3 +1,7 @@
+<?php
+$nameErr = "";
+
+?>
 
 <html>
 <head>
@@ -30,15 +34,12 @@
 <section id="banner">
     <h2>SIGNUP</h2>
     <p>MuseScore</p>
-    <p><span class="error">* required field.</span></p>
-    <form action="Signup_validate.php" method="POST">
+    <form action="Signup_validate.php" method="POST" onsubmit="return checkForm(this);"  >
         <div class="container 75%">
             <div class="row uniform 50%">
                 <div class="6u 12u$(xsmall)">
-                    <h4>Username</h4>
-                    <input name="username" placeholder="Username" type="text" />
-                    <span class="error">* <?php echo $nameErr;?></span>
-                    <br><br>
+                        <h4>Username</h4>
+                        <input name="username" placeholder="Username" type="text" />
                 </div>
                 <div class="6u$ 12u$(xsmall)">
                     <h4>Email</h4>
@@ -74,8 +75,8 @@
 </section>
 
 
-
 <!-- Scripts -->
+<script src="Validation/validate.js"></script>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/skel.min.js"></script>
 <script src="assets/js/util.js"></script>

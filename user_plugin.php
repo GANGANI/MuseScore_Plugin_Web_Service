@@ -16,8 +16,11 @@ include "query.php";
 <header id="header">
     <div class="inner">
         <a href="index.html" class="logo">MuseScore</a>
-    </div>
-    <div>
+        <nav id="nav">
+            <a href="Downloaded_plugins.php">Downloads</a>
+            <a href="updated_plugins.php">Updates</a>
+            <a href="Logout.php">Logout</a>
+        </nav>
         <a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars">Menu</span></a>
     </div>
 </header>

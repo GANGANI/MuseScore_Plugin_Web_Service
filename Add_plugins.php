@@ -31,7 +31,7 @@
 
         <div class="row 200%">
             <div class="12u 12u$(medium)">
-                <form method="post" action="plugin_details.php">
+                <form method="post" action="plugin_details.php" onsubmit="return checkForm(this);">
                     <div class="row uniform">
 
                         <div class="6u 12u$(xsmall)">
@@ -41,7 +41,7 @@
                             <div class="select-wrapper">
                                 <select name="API_Compatibility" id="category">
                                     <option value="">- API Compatibility -</option>
-                                    <option value="1.x" name="">1.x</option>
+                                    <option value="1.x">1.x</option>
                                     <option value="2.x">2.x</option>
                                     <option value="3.x">3.x</option>
                                 </select>
@@ -55,12 +55,12 @@
                             <input type="text" name="author" id="name3" value="" placeholder="Author" />
                         </div>
                         <div class="6u 12u$(xsmall)">
-                            <input type="text" name="plugin" id="name4" value="" placeholder="Add plugin link" />
+                            <input type="text" id="url" name="plugin" id="name4" value="" placeholder="Add plugin link" />
                         </div>
                         <!-- Break -->
                         <div class="12u$">
                             <ul class="actions">
-                                <li><input type="submit"  value="Add Plugin" /></li>
+                                <li><input type="submit"  value="Add Plugin" onclick="Validate()" /></li>
                             </ul>
                         </div>
 
@@ -82,6 +82,7 @@
 
 
 <!-- Scripts -->
+<script src="Validation/addPluginValidation.js"></script>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/skel.min.js"></script>
 <script src="assets/js/util.js"></script>
