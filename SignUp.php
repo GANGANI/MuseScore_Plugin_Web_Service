@@ -1,3 +1,4 @@
+
 <html>
 <head>
     <title>MuseScore</title>
@@ -29,12 +30,15 @@
 <section id="banner">
     <h2>SIGNUP</h2>
     <p>MuseScore</p>
+    <p><span class="error">* required field.</span></p>
     <form action="Signup_validate.php" method="POST">
         <div class="container 75%">
             <div class="row uniform 50%">
                 <div class="6u 12u$(xsmall)">
                     <h4>Username</h4>
                     <input name="username" placeholder="Username" type="text" />
+                    <span class="error">* <?php echo $nameErr;?></span>
+                    <br><br>
                 </div>
                 <div class="6u$ 12u$(xsmall)">
                     <h4>Email</h4>
