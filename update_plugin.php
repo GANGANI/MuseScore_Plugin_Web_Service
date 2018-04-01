@@ -42,7 +42,7 @@ $row = $result->fetch_assoc();
 
         <div class="row 200%">
             <div class="12u 12u$(medium)">
-                <form method="POST" action="Updated_plugins_details.php">
+                <form method="POST" action="Updated_plugins_details.php" onsubmit="return checkForm(this);">
                     <div class="row uniform">
 
                         <div class="6u 12u$(xsmall)">
@@ -66,12 +66,12 @@ $row = $result->fetch_assoc();
                             <input type="text" name="author" id="name3" value=<?php echo $row['author']?> placeholder="Author" />
                         </div>
                         <div class="6u 12u$(xsmall)">
-                            <input type="text" name="plugin" id="name4" value="" placeholder="Add plugin link" />
+                            <input type="text" name="plugin" id="url" value="" placeholder="Add plugin link" />
                         </div>
                         <!-- Break -->
                         <div class="12u$">
                             <ul class="actions">
-                                <li><input type="submit"  value="Update Plugin" /></li>
+                                <li><input type="submit"  value="Update Plugin" onclick="Validate()" /></li>
                             </ul>
                         </div>
 
@@ -91,6 +91,7 @@ $row = $result->fetch_assoc();
 
 
 <!-- Scripts -->
+<script src="Validation/addPluginValidation.js"></script>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/skel.min.js"></script>
 <script src="assets/js/util.js"></script>

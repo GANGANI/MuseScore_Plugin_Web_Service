@@ -11,12 +11,24 @@ if (($_POST['title'])!="" and ($_POST['API_Compatibility'])!="" and ($_POST['cat
     $category = $_POST['category'];
     $author = $_POST['author'];
     $plugin = $_POST['plugin'];
-    //session_start();
-    //$_SESSION['plugin'] = $title;
 
-    $query = "INSERT INTO plugin_details(Title,category,Version,author,plugin) VALUES ('$title','$category','$apiCompatibility','$author','$plugin')";
-    $conn->query($query);
-    include "Plugins.php";
+    $sql_t = "SELECT * FROM plugin_details WHERE Title='$title'";
+    $sql_p = "SELECT * FROM plugin_details WHERE plugin='$plugin'";
+    $res_t=$conn->query($sql_t);
+    $res_p=$conn->query($sql_p);
+    if (mysqli_num_rows($res_u) > 0) {
+        $title_error = "Sorry... Title already taken";
+        include "SignUp.php";
+    }
+    elseif (mysqli_num_rows($res_u) > 0) {
+        $url_error = "Sorry... url already taken";
+        include "SignUp.php";
+    }
+    else{
+            $query = "INSERT INTO plugin_details(Title,category,Version,author,plugin) VALUES ('$title','$category','$apiCompatibility','$author','$plugin')";
+            $conn->query($query);
+            include "Plugins.php";
+        }
 }
 else{
     include "Add_plugins.php";
@@ -24,3 +36,20 @@ else{
 
 ?>
 
+<html>
+<?php if (isset($title_error)): ?>
+    <script>
+        alert("Sorry...Entered title is already taken");
+    </script>
+
+<?php endif ?>
+
+<?php if (isset($url_error)): ?>
+    <script>
+        alert("Sorry...Entered url is already uploaded");
+    </script>
+<?php endif ?>
+
+
+
+</html>

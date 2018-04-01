@@ -55,7 +55,7 @@
                             <input type="text" name="author" id="name3" value="" placeholder="Author" />
                         </div>
                         <div class="6u 12u$(xsmall)">
-                            <input type="text" id="url" name="plugin" id="name4" value="" placeholder="Add plugin link" />
+                            <input type="text" id="url" name="plugin"  value="" placeholder="Add plugin link" />
                         </div>
                         <!-- Break -->
                         <div class="12u$">

@@ -27,7 +27,7 @@ if (($_POST['username'])!="" and ($_POST['password'])!="" and ($_POST['email'])!
         $email_error = "Sorry... email already taken";
         include "SignUp.php";
     }else if(mysqli_num_rows($res_p) > 0){
-        $email_error = "Sorry... password already taken";
+        $pwd_error = "Sorry... password already taken";
         include "SignUp.php";
     }else{
             $query = "INSERT INTO m_user(username,password,email,user_role_type) VALUES ('$username','$password','$email','$user_type')";
