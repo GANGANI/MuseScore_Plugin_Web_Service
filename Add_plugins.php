@@ -25,7 +25,7 @@
 <section id="main" class="wrapper">
     <div class="inner">
         <header class="align-center">
-            <h2>Plugin</h2>
+            <h2>Add Plugin</h2>
             <p>Plugin Details | MuseScore</p>
         </header>
 

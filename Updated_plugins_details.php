@@ -15,7 +15,7 @@ if (($_POST['API_Compatibility'])!="" and ($_POST['author'])!="" and ($_POST['pl
     $res_p = $conn->query($sql_p);
     if (mysqli_num_rows($res_p) > 0) {
         $url_error = "Sorry... url already taken";
-        include "SignUp.php";
+        header("location:SignUp.php");
     } else {
         $query = "update plugin_details set author='$author', plugin='$plugin', Version='$apiCompatibility' where Title='$title' ";
         $conn->query($query) or die($conn->error);
@@ -23,12 +23,11 @@ if (($_POST['API_Compatibility'])!="" and ($_POST['author'])!="" and ($_POST['pl
 
         $query2 = "insert into updated_plugin(Title) values ('$title')";
         $conn->query($query2) or die($conn->error);
-
-        include "Plugins.php";
+        header("location:Plugins.php");
     }
 }
 else{
-        include "update_plugin.php";
+    header("location:update_plugin.php");
     }
 
 ?>

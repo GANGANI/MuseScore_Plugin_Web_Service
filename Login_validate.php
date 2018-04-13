@@ -25,12 +25,12 @@ if (isset($_POST['username']) and isset($_POST['password'])){
             include "Plugins.php";
         }
         if ($user_type=="user") {
-            include "user_plugin.php";
+            header("location:user_plugin.php");
         }
     }
     else{
         $message = "enter user name password correctly";
-        include "Login.php";
+        header("location:Login.php");
     }
 }
 

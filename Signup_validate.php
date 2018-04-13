@@ -22,17 +22,17 @@ if (($_POST['username'])!="" and ($_POST['password'])!="" and ($_POST['email'])!
     $res_p=$conn->query($sql_p);
     if (mysqli_num_rows($res_u) > 0) {
         $name_error = "Sorry... username already taken";
-        include "SignUp.php";
+        header("location:SignUp.php");
     }else if(mysqli_num_rows($res_e) > 0){
         $email_error = "Sorry... email already taken";
-        include "SignUp.php";
+        header("location:SignUp.php");
     }else if(mysqli_num_rows($res_p) > 0){
         $pwd_error = "Sorry... password already taken";
-        include "SignUp.php";
+        header("location:SignUp.php");
     }else{
             $query = "INSERT INTO m_user(username,password,email,user_role_type) VALUES ('$username','$password','$email','$user_type')";
             $conn->query($query);
-            include "Login.php";
+            header("location:Login.php");
     }
 }
 else{

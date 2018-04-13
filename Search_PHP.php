@@ -14,5 +14,7 @@ if (($_POST['search'])!=""){
     session_start();
     $_SESSION['search_result'] = $search;
     $_SESSION['search'] = $searchbtn;
+    header("location:Login.php");
+
     include "Search_Result.php";
 }

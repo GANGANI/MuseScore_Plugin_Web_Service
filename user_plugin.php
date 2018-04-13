@@ -50,7 +50,7 @@ include "query.php";
 
         <div class="row 200%">
             <div class="3u 12u$(small)">
-                <form action="Downloaded_plugins.php.php" method="POST">
+                <form action="Downloaded_plugins.php" method="POST">
                     <input type="submit" value="Downloaded Plugins" class="special" />
                     <p></p>
                 </form>

@@ -18,20 +18,20 @@ if (($_POST['title'])!="" and ($_POST['API_Compatibility'])!="" and ($_POST['cat
     $res_p=$conn->query($sql_p);
     if (mysqli_num_rows($res_u) > 0) {
         $title_error = "Sorry... Title already taken";
-        include "SignUp.php";
+        header("location:SignUp.php");
     }
     elseif (mysqli_num_rows($res_u) > 0) {
         $url_error = "Sorry... url already taken";
-        include "SignUp.php";
+        header("location:SignUp.php");
     }
     else{
             $query = "INSERT INTO plugin_details(Title,category,Version,author,plugin) VALUES ('$title','$category','$apiCompatibility','$author','$plugin')";
             $conn->query($query);
-            include "Plugins.php";
+            header("location:Plugins.php");
         }
 }
 else{
-    include "Add_plugins.php";
+    header("location:Add_plugins.php");
 }
 
 ?>
