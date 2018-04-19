@@ -91,7 +91,7 @@ $row = $result->fetch_assoc();
 
 
 <!-- Scripts -->
-<script src="../Validation/addPluginValidation.js"></script>
+<script src="../Validation/PluginValidation.js"></script>
 <script src="../assets/js/jquery.min.js"></script>
 <script src="../assets/js/skel.min.js"></script>
 <script src="../assets/js/util.js"></script>

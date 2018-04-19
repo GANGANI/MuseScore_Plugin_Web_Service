@@ -8,13 +8,12 @@
 
 namespace App;
 
-include "connec.php";
-
+require_once "connection.php";
 
 class plugin
 {
     public function getPluginDetails($attributeArray,$condition){
-        $conn = new connec();
+        $conn = new connection();
         $conn = $conn->makeConnection();
         $str = '';
         for ($i = 0; $i < count($attributeArray); $i++) {
@@ -29,7 +28,7 @@ class plugin
     }
 
     public function setPluginDetails($attributeArray,$conditionArray){
-        $conn = new connec();
+        $conn = new connection();
         $conn = $conn->makeConnection();
         $str = '';
         $str2 = '';
@@ -54,4 +53,20 @@ class plugin
         $conn->query($sql1) or die($conn->error);;
         return;
     }
+
+    public function getDownloadedPluginDetails($attributeArray,$condition){
+        $conn = new connection();
+        $conn = $conn->makeConnection();
+        $str = '';
+        for ($i = 0; $i < count($attributeArray); $i++) {
+
+            $str .= ',' . $attributeArray[$i];
+
+        }
+        $str = substr($str, 1);
+        $sql1 = "select $str from plugin_details natural join downloadedPlugins where username='$condition'";
+        $result = $conn->query($sql1);
+        return $result;
+    }
+
 }

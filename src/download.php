@@ -3,7 +3,7 @@
 include "plugin.php";
 
 $Title = $_POST['plugin'];
-$plugin = new plugin();
+$plugin = new \App\plugin();
 $result = $plugin->getPluginDetails(['plugin'],$Title);
 
 $row = $result->fetch_assoc();

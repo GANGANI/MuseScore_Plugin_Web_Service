@@ -15,26 +15,26 @@ function checkForm(form) {
     re = /^\w+$/;
     if (!re.test(form.title.value)) {
         alert("Error: Title must contain only letters, numbers and underscores!");
-        form.username.focus();
+        form.title.focus();
         return false;
     }
     if (form.API_Compatibility.value == "") {
 
         alert("Error: Should select Api compatibility!");
-        form.username.focus();
+        form.API_Compatibility.focus();
         return false;
     }
-    if (form.category.value == "") {
+    /**if (form.category.value == "") {
         alert("Error: Category cannot be blank!");
         form.category.focus();
         return false;
     }
     re = /^\w+$/;
     if (!re.test(form.category.value)) {
-        alert("Error: Title must contain only letters, numbers and underscores!");
+        alert("Error: Category must contain only letters, numbers and underscores!");
         form.category.focus();
         return false;
-    }
+    }**/
     if (form.author.value == "") {
         alert("Error: Author's name cannot be blank!");
         form.author.focus();

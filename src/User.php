@@ -8,11 +8,39 @@
 
 namespace App;
 
-
+require_once 'connection.php';
 class User
 {
+    public $username;
+    public $password;
+    public $userRole;
+
+    public function getUsername($username,$password){
+        $conn = new connection();
+        $conn = $conn->makeConnection();
+        $sql1 = "SELECT username FROM m_user  WHERE username = '$username' and password = '$password'";
+        $result = $conn->query($sql1);
+        return $result;
+    }
+
+    public function getPassword($username,$password){
+        $conn = new connection();
+        $conn = $conn->makeConnection();
+        $sql1 = "SELECT username FROM m_user  WHERE username = '$username' and password = '$password'";
+        $result = $conn->query($sql1);
+        return $result;
+    }
+
+    public function getUserRole($username,$password){
+        $conn = new connection();
+        $conn = $conn->makeConnection();
+        $sql1 = "SELECT user_role_type FROM m_user  WHERE username = '$username' and password = '$password'";
+        $result = $conn->query($sql1);
+        return $result;
+    }
+
     public function getUserDetails($attributeArray,$condition){
-        $conn = new connec();
+        $conn = new connection();
         $conn = $conn->makeConnection();
         $str = '';
         for ($i = 0; $i < count($attributeArray); $i++) {
@@ -28,7 +56,7 @@ class User
 
     public function setUserDetails($attributeArray,$conditionArray)
     {
-        $conn = new connec();
+        $conn = new connection();
         $conn = $conn->makeConnection();
         $str = '';
         $str2 = '';

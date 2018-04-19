@@ -1,6 +1,6 @@
 <?php
 
-include "Connection.php";
+include "connection.php";
 
 
 class query
@@ -9,7 +9,7 @@ class query
 
     function simple_select($array, $table)
     {
-        $conn = new connec();
+        $conn = new \App\connection();
         $conn = $conn->makeConnection();
         $str = '';
         for ($i = 0; $i < count($array); $i++) {
@@ -24,7 +24,7 @@ class query
     }
     function condition_select($array, $table,$where)
     {
-        $conn = new connec();
+        $conn = new \App\connection();
         $conn = $conn->makeConnection();
         $str = '';
         for ($i = 0; $i < count($array); $i++) {

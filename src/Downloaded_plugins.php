@@ -1,11 +1,5 @@
 <?php
-include "query.php";
-
-$sereverName ='127.0.0.1';
-$userName = 'root';
-$passWord = '';
-$dbName = 'pluginmanager';
-$conn = mysqli_connect($sereverName,$userName,$passWord,$dbName);
+include 'plugin.php';
 ?>
 
 <html>
@@ -51,10 +45,13 @@ $conn = mysqli_connect($sereverName,$userName,$passWord,$dbName);
                         <?php
                         session_start();
                         $user = $_SESSION['username'];
-                        $sql1 = "SELECT Title,category,version,author FROM plugin_details natural join downloadedPlugins where username='$user'";
-                        $result = $conn->query($sql1);
+                        $plugin = new \App\plugin();
+                        $result = $plugin->getDownloadedPluginDetails(['Title','category','version','author '],$user);
+                        //$sql1 = "SELECT Title,category,version,author FROM plugin_details natural join downloadedPlugins where username='$user'";
+                        //$result = $conn->query($sql1);
 
                         while ($row = $result->fetch_assoc()) {
+
                             echo '<tr>
 											<td>' . $row['Title'] . '</td>
 											<td>' . $row['category'] . '</td>

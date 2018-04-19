@@ -16,7 +16,7 @@ if (($_POST['username'])!="" and ($_POST['password'])!="" and ($_POST['email'])!
     $user_type = $_POST['user_type'];
     $sql_u = "SELECT * FROM m_user WHERE username='$username'";
     $sql_e = "SELECT * FROM m_user WHERE email='$email'";
-    $sql_p = "SELECT * FROM m_user WHERE email='$password'";
+    $sql_p = "SELECT * FROM m_user WHERE password='$password'";
     $res_u=$conn->query($sql_u);
     $res_e=$conn->query($sql_e);
     $res_p=$conn->query($sql_p);
@@ -30,10 +30,8 @@ if (($_POST['username'])!="" and ($_POST['password'])!="" and ($_POST['email'])!
         $pwd_error = "Sorry... password already taken";
         header("location:SignUp.php");
     }else{
-            $user = new user();
+            $user = new \App\User();
             $user->setUserDetails(['username','password','email','user_role_type'],[$username,$password,$email,$user_type]);
-            //$query = "INSERT INTO m_user(username,password,email,user_role_type) VALUES ('$username','$password','$email','$user_type')";
-            //$conn->query($query);
             header("location:Login.php");
     }
 }

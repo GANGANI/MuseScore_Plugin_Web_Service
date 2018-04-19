@@ -9,7 +9,7 @@
 namespace App;
 
 
-class connec
+class connection
 {
 
     function makeConnection(){
