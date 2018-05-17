@@ -12,7 +12,8 @@ function checkForm(form) {
         form.title.focus();
         return false;
     }
-    re = /^\w+$/;
+
+    re = /^\w+$ /;
     if (!re.test(form.title.value)) {
         alert("Error: Title must contain only letters, numbers and underscores!");
         form.title.focus();
@@ -24,11 +25,11 @@ function checkForm(form) {
         form.API_Compatibility.focus();
         return false;
     }
-    /**if (form.category.value == "") {
+    if (form.category.value == "") {
         alert("Error: Category cannot be blank!");
         form.category.focus();
         return false;
-    }
+    }/**
     re = /^\w+$/;
     if (!re.test(form.category.value)) {
         alert("Error: Category must contain only letters, numbers and underscores!");

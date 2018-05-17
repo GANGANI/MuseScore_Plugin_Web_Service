@@ -35,16 +35,16 @@
             <div class="row uniform 50%">
                 <div class="6u 12u$(xsmall)">
                     <h4>Username</h4>
-                    <input name="username" placeholder="Username" type="text" />
+                    <input name="username" placeholder="Username" type="text" id="username" />
                 </div>
                 <div class="6u$ 12u$(xsmall)">
                     <h4>Password</h4>
-                    <input name="password" placeholder="Password" type="password" />
+                    <input name="password" placeholder="Password" type="password" id="password"/>
                 </div>
             </div>
         </div>
         <ul class="actions">
-            <li><button type="submit" class="btn tf-btn btn-default" name='from' value="1">SignIn</button></li>
+            <li><button type="submit" class="btn tf-btn btn-default" name='from' value="Login" id="login">SignIn</button></li>
         </ul>
 
     </form>

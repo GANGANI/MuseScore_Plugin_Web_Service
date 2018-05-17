@@ -41,9 +41,9 @@
                             <div class="select-wrapper">
                                 <select name="API_Compatibility" id="category">
                                     <option value="">- API Compatibility -</option>
-                                    <option value="1.x">1.x</option>
-                                    <option value="2.x">2.x</option>
-                                    <option value="3.x">3.x</option>
+                                    <option value="1.x" id='1'>1.x</option>
+                                    <option value="2.x" id='2'>2.x</option>
+                                    <option value="3.x" id='3'>3.x</option>
                                 </select>
                             </div>
                             <!--<input type="email" name="email" id="email" value="" placeholder="API Compatibility" />-->
@@ -60,7 +60,7 @@
                         <!-- Break -->
                         <div class="12u$">
                             <ul class="actions">
-                                <li><input type="submit"  value="Add Plugin" onclick="Validate()" /></li>
+                                <li><input type="submit"  value="Add Plugin" onclick="Validate()" id="submit" /></li>
                             </ul>
                         </div>
 

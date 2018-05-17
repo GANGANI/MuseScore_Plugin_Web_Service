@@ -47,20 +47,23 @@ $conn = mysqli_connect($sereverName,$userName,$passWord,$dbName);
                         </thead>
                         <tbody>
                         <?php
-                        $sql = "select Title,category,version,plugin,author from plugin_details natural JOIN updated_plugin ";
+
+                        //show updated pllugin details  in a table
+                        $sql = "select Title,category,version,plugin,author,Approve from plugin_details natural JOIN updated_plugin ";
                         $result = $conn->query($sql);
                         while ($row = $result->fetch_assoc()) {
+                        if ($row['Approve']=='1') {
                             echo '<tr>
 											<td>' . $row['Title'] . '</td>
 											<td>' . $row['category'] . '</td>
 											<td>' . $row['version'] . '</td>
 											<td>' . $row['author'] . '</td>
 											<td><form action="download.php" method="POST"> 
-												<button type="submit" name ="plugin" value ="' . $row['Title'] .'" >Update</button>
+												<button type="submit" name ="plugin" value ="' . $row['Title'] . '" >Update</button>
 											</form>
 											</td>
 											</tr>';
-
+                        }
                         }
                         ?>
 

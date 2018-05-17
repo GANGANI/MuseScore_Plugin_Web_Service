@@ -12,6 +12,8 @@ require_once "connection.php";
 
 class plugin
 {
+    //get plugin details from database  by the plugin title
+
     public function getPluginDetails($attributeArray,$condition){
         $conn = new connection();
         $conn = $conn->makeConnection();
@@ -28,6 +30,9 @@ class plugin
     }
 
     public function setPluginDetails($attributeArray,$conditionArray){
+
+        //store plugin details in the database
+
         $conn = new connection();
         $conn = $conn->makeConnection();
         $str = '';
@@ -46,15 +51,22 @@ class plugin
 
         }
 
+        //
+
         $str = substr($str, 1);
         $str2 = substr($str2, 1);
 
         $sql1 = "insert into downloadedPlugins($str) values ($str2)";
-        $conn->query($sql1) or die($conn->error);;
+        $conn->query($sql1) or die($conn->error);
         return;
     }
 
+
+
     public function getDownloadedPluginDetails($attributeArray,$condition){
+
+        //get downloaded plugin details according to the user
+
         $conn = new connection();
         $conn = $conn->makeConnection();
         $str = '';

@@ -13,6 +13,8 @@ class connection
 {
 
     function makeConnection(){
+        //databse connection
+
         $sereverName ='127.0.0.1';
         $userName = 'root';
         $passWord = '';

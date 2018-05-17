@@ -6,9 +6,10 @@ $passWord = '';
 $dbName = 'pluginmanager';
 $conn = mysqli_connect($sereverName,$userName,$passWord,$dbName);
 
-
-
 if (($_POST['search'])!=""){
+
+    //search for available plugins
+
     $search = $_POST['search_result'];
     $searchbtn = $_POST['search'];
     session_start();

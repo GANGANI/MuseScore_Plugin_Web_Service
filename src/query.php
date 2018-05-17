@@ -9,6 +9,8 @@ class query
 
     function simple_select($array, $table)
     {
+        //select values from database
+
         $conn = new \App\connection();
         $conn = $conn->makeConnection();
         $str = '';
@@ -24,6 +26,8 @@ class query
     }
     function condition_select($array, $table,$where)
     {
+        //select values from database by condition
+
         $conn = new \App\connection();
         $conn = $conn->makeConnection();
         $str = '';

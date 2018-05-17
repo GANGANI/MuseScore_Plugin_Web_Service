@@ -43,12 +43,13 @@ include 'plugin.php';
                         </thead>
                         <tbody>
                         <?php
+
+                        //show downloaded plugin details in downloaded plugin details page
+
                         session_start();
                         $user = $_SESSION['username'];
                         $plugin = new \App\plugin();
                         $result = $plugin->getDownloadedPluginDetails(['Title','category','version','author '],$user);
-                        //$sql1 = "SELECT Title,category,version,author FROM plugin_details natural join downloadedPlugins where username='$user'";
-                        //$result = $conn->query($sql1);
 
                         while ($row = $result->fetch_assoc()) {
 

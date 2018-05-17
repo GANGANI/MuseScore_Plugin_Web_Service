@@ -16,6 +16,9 @@ class User
     public $userRole;
 
     public function getUsername($username,$password){
+
+        //get username by password
+
         $conn = new connection();
         $conn = $conn->makeConnection();
         $sql1 = "SELECT username FROM m_user  WHERE username = '$username' and password = '$password'";
@@ -24,6 +27,9 @@ class User
     }
 
     public function getPassword($username,$password){
+
+        //get password by username
+
         $conn = new connection();
         $conn = $conn->makeConnection();
         $sql1 = "SELECT username FROM m_user  WHERE username = '$username' and password = '$password'";
@@ -32,6 +38,9 @@ class User
     }
 
     public function getUserRole($username,$password){
+
+        //get user role type by username and password
+
         $conn = new connection();
         $conn = $conn->makeConnection();
         $sql1 = "SELECT user_role_type FROM m_user  WHERE username = '$username' and password = '$password'";
@@ -40,6 +49,9 @@ class User
     }
 
     public function getUserDetails($attributeArray,$condition){
+
+        //get user details by username
+
         $conn = new connection();
         $conn = $conn->makeConnection();
         $str = '';
@@ -56,6 +68,9 @@ class User
 
     public function setUserDetails($attributeArray,$conditionArray)
     {
+
+        //get user details by giving any of user attributes
+
         $conn = new connection();
         $conn = $conn->makeConnection();
         $str = '';
@@ -80,5 +95,38 @@ class User
         $sql1 = "insert into m_user($str) values ($str2)";
         $conn->query($sql1) or die($conn->error);;
         return;
+    }
+
+    public function validateUsername($username){
+
+        //get all user details by giving username for validation
+
+        $conn = new connection();
+        $conn = $conn->makeConnection();
+        $sql1 = "SELECT * FROM m_user WHERE username='$username'";
+        $result = $conn->query($sql1);
+        return $result;
+    }
+
+    public function validateEmail($email){
+
+        //get all user details by giving email for validation
+
+        $conn = new connection();
+        $conn = $conn->makeConnection();
+        $sql1 = "SELECT * FROM m_user WHERE email='$email'";
+        $result = $conn->query($sql1);
+        return $result;
+    }
+
+    public function validatePassword($password){
+
+        //get all user details by giving password for validation
+
+        $conn = new connection();
+        $conn = $conn->makeConnection();
+        $sql1 = "SELECT * FROM m_user WHERE password='$password'";
+        $result = $conn->query($sql1);
+        return $result;
     }
 }

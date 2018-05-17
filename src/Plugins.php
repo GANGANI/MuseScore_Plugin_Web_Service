@@ -67,21 +67,25 @@ include "query.php";
                         </thead>
                         <tbody>
                         <?php
+
+                        //show all available plugin details in all a table
+
                         $tab=new query();
-                        $result=$tab->simple_select(['Title','category','Version','plugin','author'],'plugin_details');
+                        $result=$tab->simple_select(['Title','category','Version','plugin','author','Acceptance'],'plugin_details');
                         while ($row = $result->fetch_assoc()) {
-                                echo '<tr>
+                        if ($row['Acceptance']=='0') {
+                            echo '<tr>
 											<td>' . $row['Title'] . '</td>
 											<td>' . $row['category'] . '</td>
 											<td>' . $row['Version'] . '</td>
 											<td>' . $row['author'] . '</td>
 											<td><a href="' . $row['plugin'] . '">' . $row['Title'] . '</a></td>
 											<td><form method="post" action="update_plugin.php">
-											    <button name="update" type="submit" value="' .$row['Title'].'">Update</button>
+											    <button name="update" type="submit" value="' . $row['Title'] . '" id="update">Update</button>
 											</form>
 											</td>
 											</tr>';
-
+                        }
                         }
                         ?>
 

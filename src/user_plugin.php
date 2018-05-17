@@ -78,6 +78,9 @@ include "query.php";
                         </tr>
                         </thead>
                         <tbody>
+
+                        //show all available plugin details in a table for the user
+
                         <?php
                         $tab=new query();
                         $result=$tab->simple_select(['Title','category','version','plugin','author'],'plugin_details');

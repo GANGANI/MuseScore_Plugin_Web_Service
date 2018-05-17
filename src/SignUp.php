@@ -39,26 +39,26 @@ $nameErr = "";
             <div class="row uniform 50%">
                 <div class="6u 12u$(xsmall)">
                         <h4>Username</h4>
-                        <input name="username" placeholder="Username" type="text" />
+                        <input name="username" placeholder="Username" type="text" id="username" />
                 </div>
                 <div class="6u$ 12u$(xsmall)">
                     <h4>Email</h4>
-                    <input name="email" placeholder="Password" type="email" />
+                    <input name="email" placeholder="Password" type="email" id="email" />
                 </div>
                 <div class="6u 12u$(xsmall)">
                     <h4>Password</h4>
-                    <input name="password" placeholder="Password" type="password" />
+                    <input name="password" placeholder="Password" type="password" id="password"/>
                 </div>
                 <div class="6u$ 12u$(xsmall)">
                     <h4>Re-Enter Password</h4>
-                    <input name="repeat_password" placeholder="Password" type="password" />
+                    <input name="repeat_password" placeholder="Re-Enter Password" type="password" id="repeatPass"/>
                 </div>
                 <div class="6u 12u$(xsmall)">
                     <h4>User Type</h4>
                     <div class="select-wrapper">
                         <select name="user_type" id="category">
-                            <option value="user">MuseScoe User</option>
-                            <option value="developer">Developer</option>
+                            <option value="user" id="user">MuseScoe User</option>
+                            <option value="developer" id="developer">Developer</option>
                         </select>
 
                     </div>
@@ -67,7 +67,7 @@ $nameErr = "";
             </div>
         </div>
         <ul class="actions">
-            <li><button type="submit" class="btn tf-btn btn-default" name='from' value="1">Login</button></li>
+            <li><button type="submit" class="btn tf-btn btn-default" name='login' value="1" id="login">Login</button></li>
         </ul>
 
     </form>

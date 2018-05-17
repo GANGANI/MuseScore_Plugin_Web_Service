@@ -75,7 +75,9 @@ $conn = mysqli_connect($sereverName,$userName,$passWord,$dbName);
                         </thead>
                         <tbody>
                         <?php
-                        //session_start();
+
+                        //show searched results in a table, search can be done by title category,version,plugin,author
+
                         $where = $_SESSION['search'];
                         $search = $_SESSION['search_result'];
                         $sql1 = "SELECT Title,category,version,plugin,author FROM plugin_details WHERE (Title LIKE '%$search%' or category LIKE '%$search%'  or version LIKE '%$search%' or author LIKE '%$search%' or plugin LIKE '%$search%')";
